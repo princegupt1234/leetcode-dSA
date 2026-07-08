@@ -43,4 +43,12 @@ java Solution
 |  |
 | ------- |
 | [0258-add-digits](https://github.com/princegupt1234/leetcode-dSA/tree/master/0258-add-digits) |
+## Array
+|  |
+| ------- |
+| [0001-two-sum](https://github.com/princegupt1234/leetcode-dSA/tree/master/0001-two-sum) |
+## Hash Table
+|  |
+| ------- |
+| [0001-two-sum](https://github.com/princegupt1234/leetcode-dSA/tree/master/0001-two-sum) |
 <!---LeetCode Topics End-->
