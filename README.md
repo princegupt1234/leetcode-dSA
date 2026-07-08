@@ -19,3 +19,28 @@ Each folder is named as `<problem-number>-<problem-name>` and contains the Java 
 ```bash
 javac Solution.java
 java Solution
+```
+
+## 🛠️ Language
+
+- Java
+
+## 📈 Progress
+
+![Solved](https://img.shields.io/badge/Solved-3-brightgreen) ![Easy](https://img.shields.io/badge/Easy-2-green) ![Medium](https://img.shields.io/badge/Medium-1-orange) ![Hard](https://img.shields.io/badge/Hard-0-red)
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Math
+|  |
+| ------- |
+| [0258-add-digits](https://github.com/princegupt1234/leetcode-dSA/tree/master/0258-add-digits) |
+## Simulation
+|  |
+| ------- |
+| [0258-add-digits](https://github.com/princegupt1234/leetcode-dSA/tree/master/0258-add-digits) |
+## Number Theory
+|  |
+| ------- |
+| [0258-add-digits](https://github.com/princegupt1234/leetcode-dSA/tree/master/0258-add-digits) |
+<!---LeetCode Topics End-->
