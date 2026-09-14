@@ -36,6 +36,7 @@ java Solution
 ## Math
 |  |
 | ------- |
+| [0013-roman-to-integer](https://github.com/princegupt1234/leetcode-dSA/tree/master/0013-roman-to-integer) |
 | [0258-add-digits](https://github.com/princegupt1234/leetcode-dSA/tree/master/0258-add-digits) |
 ## Simulation
 |  |
@@ -53,6 +54,7 @@ java Solution
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/princegupt1234/leetcode-dSA/tree/master/0001-two-sum) |
+| [0013-roman-to-integer](https://github.com/princegupt1234/leetcode-dSA/tree/master/0013-roman-to-integer) |
 ## Linked List
 |  |
 | ------- |
@@ -61,4 +63,8 @@ java Solution
 |  |
 | ------- |
 | [0021-merge-two-sorted-lists](https://github.com/princegupt1234/leetcode-dSA/tree/master/0021-merge-two-sorted-lists) |
+## String
+|  |
+| ------- |
+| [0013-roman-to-integer](https://github.com/princegupt1234/leetcode-dSA/tree/master/0013-roman-to-integer) |
 <!---LeetCode Topics End-->
