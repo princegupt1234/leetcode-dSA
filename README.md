@@ -15,6 +15,7 @@ Each folder is named as `<problem-number>-<problem-name>` and contains the Java 
 | 9 | [Palindrome Number](https://github.com/princegupt1234/leetcode-dSA/tree/main/9-palindrome-number) | Medium | Math |
 | 13 | [Roman To Integer](https://github.com/princegupt1234/leetcode-dSA/tree/main/0013-roman-to-integer) | Easy | DSA |
 | 21 | [Merge Two Sorted Lists](https://github.com/princegupt1234/leetcode-dSA/tree/main/0021-merge-two-sorted-lists) | Easy | Sorting |
+| 26 | [Remove Duplicates From Sorted Array](https://github.com/princegupt1234/leetcode-dSA/tree/main/0026-remove-duplicates-from-sorted-array) | Easy | Array |
 | 258 | [Add Digits](https://github.com/princegupt1234/leetcode-dSA/tree/main/0258-add-digits) | Easy | Math |
 
 ## 🚀 How to Run
@@ -30,7 +31,7 @@ java Solution
 
 ## 📈 Progress
 
-![Solved](https://img.shields.io/badge/Solved-6-brightgreen) ![Easy](https://img.shields.io/badge/Easy-4-green) ![Medium](https://img.shields.io/badge/Medium-0-orange) ![Hard](https://img.shields.io/badge/Hard-0-red)
+![Solved](https://img.shields.io/badge/Solved-7-brightgreen) ![Easy](https://img.shields.io/badge/Easy-5-green) ![Medium](https://img.shields.io/badge/Medium-0-orange) ![Hard](https://img.shields.io/badge/Hard-0-red)
 
 <!---LeetCode Topics Start-->
 # LeetCode Topics
