@@ -51,6 +51,7 @@ java Solution
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/princegupt1234/leetcode-dSA/tree/master/0001-two-sum) |
+| [0026-remove-duplicates-from-sorted-array](https://github.com/princegupt1234/leetcode-dSA/tree/master/0026-remove-duplicates-from-sorted-array) |
 ## Hash Table
 |  |
 | ------- |
@@ -68,4 +69,8 @@ java Solution
 |  |
 | ------- |
 | [0013-roman-to-integer](https://github.com/princegupt1234/leetcode-dSA/tree/master/0013-roman-to-integer) |
+## Two Pointers
+|  |
+| ------- |
+| [0026-remove-duplicates-from-sorted-array](https://github.com/princegupt1234/leetcode-dSA/tree/master/0026-remove-duplicates-from-sorted-array) |
 <!---LeetCode Topics End-->
