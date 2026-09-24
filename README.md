@@ -12,6 +12,7 @@ Each folder is named as `<problem-number>-<problem-name>` and contains the Java 
 |---|---------|------------|-------|
 | 1 | [Two Sum](https://github.com/princegupt1234/leetcode-dSA/tree/main/0001-two-sum) | Easy | Array, Hash Table |
 | 7 | [Reverse Integer](https://github.com/princegupt1234/leetcode-dSA/tree/main/7-reverse-integer) | Medium | Math |
+| 8 | [String To Integer Atoi](https://github.com/princegupt1234/leetcode-dSA/tree/main/0008-string-to-integer-atoi) | Medium | String |
 | 9 | [Palindrome Number](https://github.com/princegupt1234/leetcode-dSA/tree/main/9-palindrome-number) | Easy | Math |
 | 13 | [Roman To Integer](https://github.com/princegupt1234/leetcode-dSA/tree/main/0013-roman-to-integer) | Easy | Math, Hash Table, String |
 | 21 | [Merge Two Sorted Lists](https://github.com/princegupt1234/leetcode-dSA/tree/main/0021-merge-two-sorted-lists) | Easy | Linked List, Recursion |
@@ -31,7 +32,7 @@ java Solution
 
 ## 📈 Progress
 
-![Solved](https://img.shields.io/badge/Solved-7-brightgreen) ![Easy](https://img.shields.io/badge/Easy-6-green) ![Medium](https://img.shields.io/badge/Medium-1-orange) ![Hard](https://img.shields.io/badge/Hard-0-red)
+![Solved](https://img.shields.io/badge/Solved-8-brightgreen) ![Easy](https://img.shields.io/badge/Easy-6-green) ![Medium](https://img.shields.io/badge/Medium-2-orange) ![Hard](https://img.shields.io/badge/Hard-0-red)
 
 <!---LeetCode Topics Start-->
 # LeetCode Topics
