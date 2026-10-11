@@ -11,6 +11,7 @@ Each folder is named as `<problem-number>-<problem-name>` and contains the Java 
 | # | Problem | Difficulty | Topic |
 |---|---------|------------|-------|
 | 1 | [Two Sum](https://github.com/princegupt1234/leetcode-dSA/tree/main/0001-two-sum) | Easy | Array, Hash Table |
+| 4 | [Median Of Two Sorted Arrays](https://github.com/princegupt1234/leetcode-dSA/tree/main/0004-median-of-two-sorted-arrays) | Hard | Array, Binary Search, Divide and Conquer |
 | 7 | [Reverse Integer](https://github.com/princegupt1234/leetcode-dSA/tree/main/7-reverse-integer) | Medium | Math |
 | 8 | [String To Integer Atoi](https://github.com/princegupt1234/leetcode-dSA/tree/main/0008-string-to-integer-atoi) | Medium | String |
 | 9 | [Palindrome Number](https://github.com/princegupt1234/leetcode-dSA/tree/main/9-palindrome-number) | Easy | Math |
@@ -32,7 +33,7 @@ java Solution
 
 ## 📈 Progress
 
-![Solved](https://img.shields.io/badge/Solved-8-brightgreen) ![Easy](https://img.shields.io/badge/Easy-6-green) ![Medium](https://img.shields.io/badge/Medium-2-orange) ![Hard](https://img.shields.io/badge/Hard-0-red)
+![Solved](https://img.shields.io/badge/Solved-9-brightgreen) ![Easy](https://img.shields.io/badge/Easy-6-green) ![Medium](https://img.shields.io/badge/Medium-2-orange) ![Hard](https://img.shields.io/badge/Hard-1-red)
 
 <!---LeetCode Topics Start-->
 # LeetCode Topics
