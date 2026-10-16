@@ -180,9 +180,10 @@ public class UpdateReadme {
         StringBuilder readme = new StringBuilder();
         readme.append("# LeetCode DSA Solutions\n\n")
             .append("Java solutions synced from LeetCode using LeetHub v2.\n\n")
-            .append("![Java](https://img.shields.io/badge/Language-Java-ED8B00?logo=openjdk&logoColor=white)\n\n")
+            .append("![Java](https://img.shields.io/badge/Language-Java-ED8B00?logo=openjdk&logoColor=white) ")
+            .append("![LeetHub v2](https://img.shields.io/badge/Sync-LeetHub%20v2-2563EB)\n\n")
             .append("## Progress Dashboard\n\n")
-            .append("| Total solved | Easy | Medium | Hard |\n")
+            .append("| Total Solved | Easy | Medium | Hard |\n")
             .append("| ---: | ---: | ---: | ---: |\n")
             .append("| ").append(problems.size()).append(" | ").append(easy).append(" | ")
             .append(medium).append(" | ").append(hard).append(" |\n\n");
@@ -191,24 +192,27 @@ public class UpdateReadme {
         }
 
         readme.append("## Topic Overview\n\n")
-            .append("| Topic | Solved | Detailed index |\n")
-            .append("| --- | ---: | --- |\n");
-        topicCounts.forEach((topic, count) -> readme.append("| ").append(topic).append(" | ")
-            .append(count).append(" | [Browse](PROBLEMS.md#topic-").append(topicAnchor(topic)).append(") |\n"));
+            .append("| Topic | Solved |\n")
+            .append("| --- | ---: |\n");
+        topicCounts.forEach((topic, count) -> readme.append("| [").append(topic)
+            .append("](PROBLEMS.md#topic-").append(topicAnchor(topic)).append(") | ")
+            .append(count).append(" |\n"));
         if (topicCounts.isEmpty()) {
-            readme.append("| No topic metadata recorded | 0 | [Browse](PROBLEMS.md) |\n");
+            readme.append("| No topic metadata recorded | 0 |\n");
         }
 
         readme.append("\n## How to Run\n\n")
-            .append("Solutions define LeetCode's `Solution` methods and do not include a `main` method. ")
-            .append("Compile a solution with a local test harness, then run the harness:\n\n")
+            .append("Each submission defines a LeetCode `Solution` class without a `main` method. ")
+            .append("For local execution, compile it with a small test harness:\n\n")
             .append("```bash\n")
             .append("javac -d out 0001-two-sum/0001-two-sum.java YourTestHarness.java\n")
             .append("java -cp out YourTestHarness\n")
             .append("```\n\n")
             .append("## Browse All Problems\n\n")
-            .append("See the [complete problem catalog](PROBLEMS.md).\n\n")
-            .append("Update documentation locally after a sync with `javac UpdateReadme.java` and `java UpdateReadme`.\n\n")
+            .append("[Browse All Problems](PROBLEMS.md)\n\n")
+            .append("The searchable catalog includes problem titles, difficulty, topics, and solution links.\n\n")
+            .append("---\n\n")
+            .append("After a LeetHub sync, the existing action refreshes both docs; locally run `javac UpdateReadme.java` then `java UpdateReadme`.\n\n")
             .append(TOPICS_START).append('\n').append(TOPICS_END).append('\n');
         return readme.toString();
     }

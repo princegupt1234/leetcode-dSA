@@ -2,33 +2,33 @@
 
 Java solutions synced from LeetCode using LeetHub v2.
 
-![Java](https://img.shields.io/badge/Language-Java-ED8B00?logo=openjdk&logoColor=white)
+![Java](https://img.shields.io/badge/Language-Java-ED8B00?logo=openjdk&logoColor=white) ![LeetHub v2](https://img.shields.io/badge/Sync-LeetHub%20v2-2563EB)
 
 ## Progress Dashboard
 
-| Total solved | Easy | Medium | Hard |
+| Total Solved | Easy | Medium | Hard |
 | ---: | ---: | ---: | ---: |
 | 9 | 6 | 2 | 1 |
 
 ## Topic Overview
 
-| Topic | Solved | Detailed index |
-| --- | ---: | --- |
-| Array | 3 | [Browse](PROBLEMS.md#topic-array) |
-| Binary Search | 1 | [Browse](PROBLEMS.md#topic-binary-search) |
-| Divide and Conquer | 1 | [Browse](PROBLEMS.md#topic-divide-and-conquer) |
-| Hash Table | 2 | [Browse](PROBLEMS.md#topic-hash-table) |
-| Linked List | 1 | [Browse](PROBLEMS.md#topic-linked-list) |
-| Math | 2 | [Browse](PROBLEMS.md#topic-math) |
-| Number Theory | 1 | [Browse](PROBLEMS.md#topic-number-theory) |
-| Recursion | 1 | [Browse](PROBLEMS.md#topic-recursion) |
-| Simulation | 1 | [Browse](PROBLEMS.md#topic-simulation) |
-| String | 2 | [Browse](PROBLEMS.md#topic-string) |
-| Two Pointers | 1 | [Browse](PROBLEMS.md#topic-two-pointers) |
+| Topic | Solved |
+| --- | ---: |
+| [Array](PROBLEMS.md#topic-array) | 3 |
+| [Binary Search](PROBLEMS.md#topic-binary-search) | 1 |
+| [Divide and Conquer](PROBLEMS.md#topic-divide-and-conquer) | 1 |
+| [Hash Table](PROBLEMS.md#topic-hash-table) | 2 |
+| [Linked List](PROBLEMS.md#topic-linked-list) | 1 |
+| [Math](PROBLEMS.md#topic-math) | 2 |
+| [Number Theory](PROBLEMS.md#topic-number-theory) | 1 |
+| [Recursion](PROBLEMS.md#topic-recursion) | 1 |
+| [Simulation](PROBLEMS.md#topic-simulation) | 1 |
+| [String](PROBLEMS.md#topic-string) | 2 |
+| [Two Pointers](PROBLEMS.md#topic-two-pointers) | 1 |
 
 ## How to Run
 
-Solutions define LeetCode's `Solution` methods and do not include a `main` method. Compile a solution with a local test harness, then run the harness:
+Each submission defines a LeetCode `Solution` class without a `main` method. For local execution, compile it with a small test harness:
 
 ```bash
 javac -d out 0001-two-sum/0001-two-sum.java YourTestHarness.java
@@ -37,9 +37,13 @@ java -cp out YourTestHarness
 
 ## Browse All Problems
 
-See the [complete problem catalog](PROBLEMS.md).
+[Browse All Problems](PROBLEMS.md)
 
-Update documentation locally after a sync with `javac UpdateReadme.java` and `java UpdateReadme`.
+The searchable catalog includes problem titles, difficulty, topics, and solution links.
+
+---
+
+After a LeetHub sync, the existing action refreshes both docs; locally run `javac UpdateReadme.java` then `java UpdateReadme`.
 
 <!---LeetCode Topics Start-->
 <!---LeetCode Topics End-->
