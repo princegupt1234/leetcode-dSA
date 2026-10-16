@@ -1,5 +1,6 @@
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -85,7 +86,7 @@ public class UpdateReadme {
 
             List<String> topics = new ArrayList<>(topicsByFolder.getOrDefault(folderName, Set.of()));
             topics.sort(String.CASE_INSENSITIVE_ORDER);
-            problems.add(new Problem(number, title, difficulty, topics, javaFiles.get(0)));
+            problems.add(new Problem(number, title, difficulty, topics, javaFiles.get(0), getAddedDate(javaFiles.get(0))));
         }
         return problems;
     }
@@ -176,45 +177,91 @@ public class UpdateReadme {
         long hard = countDifficulty(problems, "Hard");
         long unrecorded = countDifficulty(problems, "Not recorded");
         Map<String, Long> topicCounts = topicCounts(problems);
+        List<Problem> recent = problems.stream()
+            .filter(problem -> !problem.addedDate.isEmpty())
+            .sorted(Comparator.comparing((Problem problem) -> problem.addedDate).reversed()
+                .thenComparing(Comparator.comparingInt((Problem problem) -> problem.number).reversed()))
+            .limit(3)
+            .toList();
 
         StringBuilder readme = new StringBuilder();
         readme.append("# LeetCode DSA Solutions\n\n")
             .append("Java solutions synced from LeetCode using LeetHub v2.\n\n")
-            .append("![Java](https://img.shields.io/badge/Language-Java-ED8B00?logo=openjdk&logoColor=white) ")
-            .append("![LeetHub v2](https://img.shields.io/badge/Sync-LeetHub%20v2-2563EB)\n\n")
-            .append("## Progress Dashboard\n\n")
-            .append("| Total Solved | Easy | Medium | Hard |\n")
-            .append("| ---: | ---: | ---: | ---: |\n")
-            .append("| ").append(problems.size()).append(" | ").append(easy).append(" | ")
-            .append(medium).append(" | ").append(hard).append(" |\n\n");
+            .append("![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white) ")
+            .append("![LeetHub v2](https://img.shields.io/badge/LeetHub-v2-6E40C9?style=flat)\n\n")
+            .append("## 🎯 Progress Dashboard\n\n")
+            .append("![Total Solved](https://img.shields.io/badge/Total%20Solved-").append(problems.size())
+            .append("-2563EB?style=for-the-badge) ")
+            .append("![Easy](https://img.shields.io/badge/Easy-").append(easy)
+            .append("-16A34A?style=for-the-badge) ")
+            .append("![Medium](https://img.shields.io/badge/Medium-").append(medium)
+            .append("-D97706?style=for-the-badge) ")
+            .append("![Hard](https://img.shields.io/badge/Hard-").append(hard)
+            .append("-DC2626?style=for-the-badge)\n\n");
         if (unrecorded > 0) {
             readme.append("Difficulty not recorded: ").append(unrecorded).append(".\n\n");
         }
 
-        readme.append("## Topic Overview\n\n")
-            .append("| Topic | Solved |\n")
-            .append("| --- | ---: |\n");
-        topicCounts.forEach((topic, count) -> readme.append("| [").append(topic)
-            .append("](PROBLEMS.md#topic-").append(topicAnchor(topic)).append(") | ")
-            .append(count).append(" |\n"));
+        readme.append("<table>\n  <tr>\n    <td valign=\"top\">\n")
+            .append("      <h3>📊 Topic Overview</h3>\n")
+            .append("      <table>\n        <thead><tr><th>Topic</th><th align=\"right\">Solved</th><th>Browse</th></tr></thead>\n        <tbody>\n");
+        topicCounts.forEach((topic, count) -> readme.append("          <tr><td>").append(htmlEscape(topic))
+            .append("</td><td align=\"right\">").append(count).append("</td><td><a href=\"PROBLEMS.md#topic-")
+            .append(topicAnchor(topic)).append("\">View &rarr;</a></td></tr>\n"));
         if (topicCounts.isEmpty()) {
-            readme.append("| No topic metadata recorded | 0 |\n");
+            readme.append("          <tr><td colspan=\"3\">No topic metadata recorded</td></tr>\n");
+        }
+        readme.append("        </tbody>\n      </table>\n    </td>\n    <td valign=\"top\">\n")
+            .append("      <h3>🕒 Recently Added Solutions</h3>\n");
+
+        if (recent.isEmpty()) {
+            readme.append("      <p>Solution addition dates are not available in Git history.</p>\n");
+        } else {
+            readme.append("      <table>\n        <thead><tr><th>Problem</th><th>Difficulty</th><th>Topics</th><th>Added</th></tr></thead>\n        <tbody>\n");
+            for (Problem problem : recent) {
+                String solutionPath = problem.javaFile.toString().replace('\\', '/');
+                String topicText = problem.topics.isEmpty() ? "Not recorded" : String.join(", ", problem.topics);
+                readme.append("          <tr><td><a href=\"").append(htmlEscape(solutionPath)).append("\">#")
+                    .append(problem.number).append(" ").append(htmlEscape(problem.title)).append("</a></td><td>")
+                    .append(htmlEscape(problem.difficulty)).append("</td><td>").append(htmlEscape(topicText))
+                    .append("</td><td>").append(problem.addedDate).append("</td></tr>\n");
+            }
+            readme.append("        </tbody>\n      </table>\n");
         }
 
-        readme.append("\n## How to Run\n\n")
-            .append("Each submission defines a LeetCode `Solution` class without a `main` method. ")
-            .append("For local execution, compile it with a small test harness:\n\n")
-            .append("```bash\n")
-            .append("javac -d out 0001-two-sum/0001-two-sum.java YourTestHarness.java\n")
-            .append("java -cp out YourTestHarness\n")
-            .append("```\n\n")
-            .append("## Browse All Problems\n\n")
-            .append("[Browse All Problems](PROBLEMS.md)\n\n")
-            .append("The searchable catalog includes problem titles, difficulty, topics, and solution links.\n\n")
+        readme.append("      <h3>🧪 How to Run</h3>\n")
+            .append("      <p>Each solution defines LeetCode's <code>Solution</code> class and has no <code>main</code>. Compile it with a local test harness:</p>\n")
+            .append("      <pre><code>javac -d out 0001-two-sum/0001-two-sum.java YourTestHarness.java\njava -cp out YourTestHarness</code></pre>\n")
+            .append("      <p><a href=\"PROBLEMS.md\"><strong>📘 Browse All Problems &rarr;</strong></a><br>")
+            .append("      Search titles, difficulty, topics, and solution links in the complete catalog.</p>\n")
+            .append("    </td>\n  </tr>\n</table>\n\n")
             .append("---\n\n")
-            .append("After a LeetHub sync, the existing action refreshes both docs; locally run `javac UpdateReadme.java` then `java UpdateReadme`.\n\n")
+            .append("After a LeetHub sync, the existing action refreshes both docs; run `javac UpdateReadme.java` then `java UpdateReadme` to regenerate locally.\n\n")
             .append(TOPICS_START).append('\n').append(TOPICS_END).append('\n');
         return readme.toString();
+    }
+
+    private static String getAddedDate(Path javaFile) {
+        String gitPath = javaFile.toString().replace('\\', '/');
+        if (gitPath.startsWith("./")) gitPath = gitPath.substring(2);
+        try {
+            Process process = new ProcessBuilder("git", "log", "-1", "--diff-filter=A", "--format=%cs", "--", gitPath)
+                .directory(ROOT.toFile())
+                .redirectErrorStream(true)
+                .start();
+            String date = new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8).trim();
+            if (process.waitFor() == 0 && date.matches("\\d{4}-\\d{2}-\\d{2}")) return date;
+        } catch (java.io.IOException ignored) {
+            return "";
+        } catch (InterruptedException interrupted) {
+            Thread.currentThread().interrupt();
+        }
+        return "";
+    }
+
+    private static String htmlEscape(String value) {
+        return value.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            .replace("\"", "&quot;").replace("'", "&#39;");
     }
 
     private static String buildCatalog(List<Problem> problems) {
@@ -293,13 +340,15 @@ public class UpdateReadme {
         private final String difficulty;
         private final List<String> topics;
         private final Path javaFile;
+        private final String addedDate;
 
-        private Problem(int number, String title, String difficulty, List<String> topics, Path javaFile) {
+        private Problem(int number, String title, String difficulty, List<String> topics, Path javaFile, String addedDate) {
             this.number = number;
             this.title = title;
             this.difficulty = difficulty;
             this.topics = topics;
             this.javaFile = javaFile;
+            this.addedDate = addedDate;
         }
     }
 }
