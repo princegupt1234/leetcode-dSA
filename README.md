@@ -1,89 +1,45 @@
-# 🧠 LeetCode DSA Solutions
+# LeetCode DSA Solutions
 
-A collection of LeetCode problems solved in **Java**, organized by problem number.
+Java solutions synced from LeetCode using LeetHub v2.
 
-## 📁 Structure
+![Java](https://img.shields.io/badge/Language-Java-ED8B00?logo=openjdk&logoColor=white)
 
-Each folder is named as `<problem-number>-<problem-name>` and contains the Java solution.
+## Progress Dashboard
 
-## ✅ Problems Solved
+| Total solved | Easy | Medium | Hard |
+| ---: | ---: | ---: | ---: |
+| 9 | 6 | 2 | 1 |
 
-| # | Problem | Difficulty | Topic |
-|---|---------|------------|-------|
-| 1 | [Two Sum](https://github.com/princegupt1234/leetcode-dSA/tree/main/0001-two-sum) | Easy | Array, Hash Table |
-| 4 | [Median Of Two Sorted Arrays](https://github.com/princegupt1234/leetcode-dSA/tree/main/0004-median-of-two-sorted-arrays) | Hard | Array, Binary Search, Divide and Conquer |
-| 7 | [Reverse Integer](https://github.com/princegupt1234/leetcode-dSA/tree/main/7-reverse-integer) | Medium | Math |
-| 8 | [String To Integer Atoi](https://github.com/princegupt1234/leetcode-dSA/tree/main/0008-string-to-integer-atoi) | Medium | String |
-| 9 | [Palindrome Number](https://github.com/princegupt1234/leetcode-dSA/tree/main/9-palindrome-number) | Easy | Math |
-| 13 | [Roman To Integer](https://github.com/princegupt1234/leetcode-dSA/tree/main/0013-roman-to-integer) | Easy | Math, Hash Table, String |
-| 21 | [Merge Two Sorted Lists](https://github.com/princegupt1234/leetcode-dSA/tree/main/0021-merge-two-sorted-lists) | Easy | Linked List, Recursion |
-| 26 | [Remove Duplicates From Sorted Array](https://github.com/princegupt1234/leetcode-dSA/tree/main/0026-remove-duplicates-from-sorted-array) | Easy | Array, Two Pointers |
-| 258 | [Add Digits](https://github.com/princegupt1234/leetcode-dSA/tree/main/0258-add-digits) | Easy | Math, Simulation, Number Theory |
+## Topic Overview
 
-## 🚀 How to Run
+| Topic | Solved | Detailed index |
+| --- | ---: | --- |
+| Array | 3 | [Browse](PROBLEMS.md#topic-array) |
+| Binary Search | 1 | [Browse](PROBLEMS.md#topic-binary-search) |
+| Divide and Conquer | 1 | [Browse](PROBLEMS.md#topic-divide-and-conquer) |
+| Hash Table | 2 | [Browse](PROBLEMS.md#topic-hash-table) |
+| Linked List | 1 | [Browse](PROBLEMS.md#topic-linked-list) |
+| Math | 2 | [Browse](PROBLEMS.md#topic-math) |
+| Number Theory | 1 | [Browse](PROBLEMS.md#topic-number-theory) |
+| Recursion | 1 | [Browse](PROBLEMS.md#topic-recursion) |
+| Simulation | 1 | [Browse](PROBLEMS.md#topic-simulation) |
+| String | 2 | [Browse](PROBLEMS.md#topic-string) |
+| Two Pointers | 1 | [Browse](PROBLEMS.md#topic-two-pointers) |
+
+## How to Run
+
+Solutions define LeetCode's `Solution` methods and do not include a `main` method. Compile a solution with a local test harness, then run the harness:
 
 ```bash
-javac Solution.java
-java Solution
+javac -d out 0001-two-sum/0001-two-sum.java YourTestHarness.java
+java -cp out YourTestHarness
 ```
 
-## 🛠️ Language
+## Browse All Problems
 
-- Java
+See the [complete problem catalog](PROBLEMS.md).
 
-## 📈 Progress
-
-![Solved](https://img.shields.io/badge/Solved-9-brightgreen) ![Easy](https://img.shields.io/badge/Easy-6-green) ![Medium](https://img.shields.io/badge/Medium-2-orange) ![Hard](https://img.shields.io/badge/Hard-1-red)
+Update documentation locally after a sync with `javac UpdateReadme.java` and `java UpdateReadme`.
 
 <!---LeetCode Topics Start-->
-# LeetCode Topics
-## Math
-|  |
-| ------- |
-| [0013-roman-to-integer](https://github.com/princegupt1234/leetcode-dSA/tree/master/0013-roman-to-integer) |
-| [0258-add-digits](https://github.com/princegupt1234/leetcode-dSA/tree/master/0258-add-digits) |
-## Simulation
-|  |
-| ------- |
-| [0258-add-digits](https://github.com/princegupt1234/leetcode-dSA/tree/master/0258-add-digits) |
-## Number Theory
-|  |
-| ------- |
-| [0258-add-digits](https://github.com/princegupt1234/leetcode-dSA/tree/master/0258-add-digits) |
-## Array
-|  |
-| ------- |
-| [0001-two-sum](https://github.com/princegupt1234/leetcode-dSA/tree/master/0001-two-sum) |
-| [0004-median-of-two-sorted-arrays](https://github.com/princegupt1234/leetcode-dSA/tree/master/0004-median-of-two-sorted-arrays) |
-| [0026-remove-duplicates-from-sorted-array](https://github.com/princegupt1234/leetcode-dSA/tree/master/0026-remove-duplicates-from-sorted-array) |
-## Hash Table
-|  |
-| ------- |
-| [0001-two-sum](https://github.com/princegupt1234/leetcode-dSA/tree/master/0001-two-sum) |
-| [0013-roman-to-integer](https://github.com/princegupt1234/leetcode-dSA/tree/master/0013-roman-to-integer) |
-## Linked List
-|  |
-| ------- |
-| [0021-merge-two-sorted-lists](https://github.com/princegupt1234/leetcode-dSA/tree/master/0021-merge-two-sorted-lists) |
-## Recursion
-|  |
-| ------- |
-| [0021-merge-two-sorted-lists](https://github.com/princegupt1234/leetcode-dSA/tree/master/0021-merge-two-sorted-lists) |
-## String
-|  |
-| ------- |
-| [0008-string-to-integer-atoi](https://github.com/princegupt1234/leetcode-dSA/tree/master/0008-string-to-integer-atoi) |
-| [0013-roman-to-integer](https://github.com/princegupt1234/leetcode-dSA/tree/master/0013-roman-to-integer) |
-## Two Pointers
-|  |
-| ------- |
-| [0026-remove-duplicates-from-sorted-array](https://github.com/princegupt1234/leetcode-dSA/tree/master/0026-remove-duplicates-from-sorted-array) |
-## Binary Search
-|  |
-| ------- |
-| [0004-median-of-two-sorted-arrays](https://github.com/princegupt1234/leetcode-dSA/tree/master/0004-median-of-two-sorted-arrays) |
-## Divide and Conquer
-|  |
-| ------- |
-| [0004-median-of-two-sorted-arrays](https://github.com/princegupt1234/leetcode-dSA/tree/master/0004-median-of-two-sorted-arrays) |
 <!---LeetCode Topics End-->
