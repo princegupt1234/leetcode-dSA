@@ -53,4 +53,13 @@ java -cp out YourTestHarness</code></pre>
 Documentation is regenerated after each LeetHub push; locally run `javac UpdateReadme.java` and `java UpdateReadme`.
 
 <!---LeetCode Topics Start-->
+# LeetCode Topics
+## Two Pointers
+|  |
+| ------- |
+| [0344-reverse-string](https://github.com/princegupt1234/leetcode-dSA/tree/master/0344-reverse-string) |
+## String
+|  |
+| ------- |
+| [0344-reverse-string](https://github.com/princegupt1234/leetcode-dSA/tree/master/0344-reverse-string) |
 <!---LeetCode Topics End-->
