@@ -23,13 +23,13 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
-          java-version: "17"
+          java-version: "25"
           distribution: "temurin"
 
       - name: Compile and run
         run: |
           mkdir -p "$RUNNER_TEMP/readme-generator"
-          javac -encoding UTF-8 -d "$RUNNER_TEMP/readme-generator" tools/ReadmeGenerator.java
+          javac --release 25 -encoding UTF-8 -d "$RUNNER_TEMP/readme-generator" tools/ReadmeGenerator.java
           java -cp "$RUNNER_TEMP/readme-generator" ReadmeGenerator
 
       - name: Commit and push if changed

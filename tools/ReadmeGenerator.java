@@ -64,19 +64,20 @@ public final class ReadmeGenerator {
                 throw new IllegalStateException("No Java LeetCode solutions were found under " + root);
             }
 
-            List<Problem> recent = new ArrayList<>(problems);
+            List<Problem> recent;
             boolean gitAvailable = isGitRepository(root);
             if (gitAvailable) {
-                for (Problem problem : recent) {
-                    problem.lastChanged = lastChanged(root, problem.solution);
+                recent = new ArrayList<>(problems.size());
+                for (Problem problem : problems) {
+                    recent.add(problem.withLastChanged(lastChanged(root, problem.solution)));
                 }
                 recent.sort(Comparator
-                        .comparing((Problem problem) -> problem.lastChanged,
+                        .comparing(Problem::lastChanged,
                                 Comparator.nullsLast(Comparator.reverseOrder()))
-                        .thenComparing((Problem problem) -> problem.number, Comparator.reverseOrder()));
+                        .thenComparing(Problem::number, Comparator.reverseOrder()));
             } else {
                 System.err.println("Git history is unavailable; recent solution dates cannot be determined.");
-                recent.clear();
+                recent = List.of();
             }
 
             Path readme = root.resolve("README.md");
@@ -359,7 +360,7 @@ public final class ReadmeGenerator {
         readme.append(START_MARKER).append("\n\n");
         readme.append("# LeetCode DSA Solutions\n\n");
         readme.append("Java solutions to LeetCode problems, automatically synced using LeetHub v2.\n\n");
-        readme.append("![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) ")
+        readme.append("![Java 25](https://img.shields.io/badge/Java-25-ED8B00?style=flat-square&logo=openjdk&logoColor=white) ")
                 .append("![LeetHub v2](https://img.shields.io/badge/LeetHub-v2-6E40C9?style=flat-square) ")
                 .append("![LeetCode](https://img.shields.io/badge/LeetCode-Problem%20Solving-FFA116?style=flat-square&logo=leetcode&logoColor=white)\n\n");
 
@@ -381,13 +382,15 @@ public final class ReadmeGenerator {
             readme.append('\n');
         }
 
-        readme.append("## 📚 All Problems and Solutions\n\n");
+        readme.append("<details>\n")
+                .append("<summary>📚 All Problems and Solutions (")
+                .append(problems.size()).append(")</summary>\n\n");
         readme.append("| # | Problem | Difficulty | Topic | Java Solution |\n")
                 .append("| ---: | --- | :---: | --- | :---: |\n");
         for (Problem problem : problems) {
             appendProblemRow(readme, problem, true);
         }
-        readme.append('\n');
+        readme.append("\n</details>\n\n");
 
         appendTopics(readme, problems);
         appendRunGuide(readme);
@@ -443,9 +446,12 @@ public final class ReadmeGenerator {
                 .forEach(entry -> byTopic.computeIfAbsent(entry.getKey(), ignored -> new ArrayList<>())
                         .add(entry.getValue()));
 
-        readme.append("## 📂 Topic-wise Navigation\n\n");
+        readme.append("<details>\n")
+                .append("<summary>📂 Browse by Topic (")
+                .append(byTopic.size()).append(" topics)</summary>\n\n");
         if (byTopic.isEmpty()) {
             readme.append("Topic metadata is not recorded for these solutions yet.\n\n");
+            readme.append("</details>\n\n");
             return;
         }
 
@@ -462,11 +468,12 @@ public final class ReadmeGenerator {
                     .toList()));
             readme.append('\n');
         }
-        readme.append('\n');
+        readme.append("\n</details>\n\n");
     }
 
     private static void appendRunGuide(StringBuilder readme) {
-        readme.append("## ▶️ How to Run a Solution\n\n");
+        readme.append("<details>\n")
+                .append("<summary>▶️ How to Run a Solution</summary>\n\n");
         readme.append("<table><tr><td valign=\"top\">\n\n");
         readme.append("1. Navigate to a problem folder in this repository.\n")
                 .append("2. Open its Java solution file.\n")
@@ -484,7 +491,8 @@ public final class ReadmeGenerator {
                 .append("    }\n")
                 .append("}\n")
                 .append("```\n\n");
-        readme.append("</td></tr></table>\n");
+        readme.append("</td></tr></table>\n\n")
+                .append("</details>\n");
     }
 
     private static String mergeGeneratedSection(Path readme, String generated) throws IOException {
@@ -512,38 +520,24 @@ public final class ReadmeGenerator {
         return prefix + generated + suffix;
     }
 
-    private static final class Problem {
-        private final int number;
-        private final String title;
-        private final String difficulty;
-        private final String leetCodeUrl;
-        private final List<String> topics;
-        private final Path solution;
-        private Long lastChanged;
-
+    private record Problem(
+            int number,
+            String title,
+            String difficulty,
+            String leetCodeUrl,
+            List<String> topics,
+            Path solution,
+            Long lastChanged) {
         private Problem(
-                int number,
-                String title,
-                String difficulty,
-                String leetCodeUrl,
-                List<String> topics,
-                Path solution) {
-            this.number = number;
-            this.title = title;
-            this.difficulty = difficulty;
-            this.leetCodeUrl = leetCodeUrl;
-            this.topics = topics;
-            this.solution = solution;
+                int number, String title, String difficulty, String leetCodeUrl, List<String> topics, Path solution) {
+            this(number, title, difficulty, leetCodeUrl, topics, solution, null);
+        }
+
+        private Problem withLastChanged(Long timestamp) {
+            return new Problem(number, title, difficulty, leetCodeUrl, topics, solution, timestamp);
         }
     }
 
-    private static final class ProcessResult {
-        private final int exitCode;
-        private final String output;
-
-        private ProcessResult(int exitCode, String output) {
-            this.exitCode = exitCode;
-            this.output = output;
-        }
+    private record ProcessResult(int exitCode, String output) {
     }
 }

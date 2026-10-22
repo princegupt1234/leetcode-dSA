@@ -4,7 +4,7 @@
 
 Java solutions to LeetCode problems, automatically synced using LeetHub v2.
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) ![LeetHub v2](https://img.shields.io/badge/LeetHub-v2-6E40C9?style=flat-square) ![LeetCode](https://img.shields.io/badge/LeetCode-Problem%20Solving-FFA116?style=flat-square&logo=leetcode&logoColor=white)
+![Java 25](https://img.shields.io/badge/Java-25-ED8B00?style=flat-square&logo=openjdk&logoColor=white) ![LeetHub v2](https://img.shields.io/badge/LeetHub-v2-6E40C9?style=flat-square) ![LeetCode](https://img.shields.io/badge/LeetCode-Problem%20Solving-FFA116?style=flat-square&logo=leetcode&logoColor=white)
 
 ## 📊 Progress Summary
 
@@ -20,7 +20,8 @@ Java solutions to LeetCode problems, automatically synced using LeetHub v2.
 | 0026 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | [View Code](./0026-remove-duplicates-from-sorted-array/0026-remove-duplicates-from-sorted-array.java) |
 | 0013 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | [View Code](./0013-roman-to-integer/0013-roman-to-integer.java) |
 
-## 📚 All Problems and Solutions
+<details>
+<summary>📚 All Problems and Solutions (10)</summary>
 
 | # | Problem | Difficulty | Topic | Java Solution |
 | ---: | --- | :---: | --- | :---: |
@@ -35,7 +36,10 @@ Java solutions to LeetCode problems, automatically synced using LeetHub v2.
 | 0258 | [Add Digits](https://leetcode.com/problems/add-digits) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Math`, `Number Theory` | [View Code](./0258-add-digits/0258-add-digits.java) |
 | 0344 | [Reverse String](https://leetcode.com/problems/reverse-string) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `String`, `Two Pointers` | [View Code](./0344-reverse-string/0344-reverse-string.java) |
 
-## 📂 Topic-wise Navigation
+</details>
+
+<details>
+<summary>📂 Browse by Topic (10 topics)</summary>
 
 - **Array (3):** [0001 Two Sum](./0001-two-sum/0001-two-sum.java) · [0004 Median of Two Sorted Arrays](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java) · [0026 Remove Duplicates from Sorted Array](./0026-remove-duplicates-from-sorted-array/0026-remove-duplicates-from-sorted-array.java)
 - **Binary Search (1):** [0004 Median of Two Sorted Arrays](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java)
@@ -48,7 +52,10 @@ Java solutions to LeetCode problems, automatically synced using LeetHub v2.
 - **String (3):** [0008 String to Integer (atoi)](./0008-string-to-integer-atoi/0008-string-to-integer-atoi.java) · [0013 Roman to Integer](./0013-roman-to-integer/0013-roman-to-integer.java) · [0344 Reverse String](./0344-reverse-string/0344-reverse-string.java)
 - **Two Pointers (2):** [0026 Remove Duplicates from Sorted Array](./0026-remove-duplicates-from-sorted-array/0026-remove-duplicates-from-sorted-array.java) · [0344 Reverse String](./0344-reverse-string/0344-reverse-string.java)
 
-## ▶️ How to Run a Solution
+</details>
+
+<details>
+<summary>▶️ How to Run a Solution</summary>
 
 <table><tr><td valign="top">
 
@@ -74,4 +81,6 @@ class TwoSumTest {
 ```
 
 </td></tr></table>
+
+</details>
 <!-- README-GENERATED-END -->
