@@ -37,7 +37,16 @@ Java solutions to LeetCode problems, automatically synced using LeetHub v2.
 
 ## 📂 Topic-wise Navigation
 
-<table><tr><td align="center"><a href="./0001-two-sum/">Array</a><br><sub>(3)</sub></td><td align="center"><a href="./0004-median-of-two-sorted-arrays/">Binary Search</a><br><sub>(1)</sub></td><td align="center"><a href="./0004-median-of-two-sorted-arrays/">Divide and Conquer</a><br><sub>(1)</sub></td><td align="center"><a href="./0001-two-sum/">Hash Table</a><br><sub>(2)</sub></td><td align="center"><a href="./0021-merge-two-sorted-lists/">Linked List</a><br><sub>(1)</sub></td><td align="center"><a href="./7-reverse-integer/">Math</a><br><sub>(4)</sub></td><td align="center"><a href="./0258-add-digits/">Number Theory</a><br><sub>(1)</sub></td><td align="center"><a href="./0021-merge-two-sorted-lists/">Recursion</a><br><sub>(1)</sub></td><td align="center"><a href="./0008-string-to-integer-atoi/">String</a><br><sub>(3)</sub></td><td align="center"><a href="./0026-remove-duplicates-from-sorted-array/">Two Pointers</a><br><sub>(2)</sub></td></tr></table>
+- **Array (3):** [0001 Two Sum](./0001-two-sum/0001-two-sum.java) · [0004 Median of Two Sorted Arrays](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java) · [0026 Remove Duplicates from Sorted Array](./0026-remove-duplicates-from-sorted-array/0026-remove-duplicates-from-sorted-array.java)
+- **Binary Search (1):** [0004 Median of Two Sorted Arrays](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java)
+- **Divide and Conquer (1):** [0004 Median of Two Sorted Arrays](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java)
+- **Hash Table (2):** [0001 Two Sum](./0001-two-sum/0001-two-sum.java) · [0013 Roman to Integer](./0013-roman-to-integer/0013-roman-to-integer.java)
+- **Linked List (1):** [0021 Merge Two Sorted Lists](./0021-merge-two-sorted-lists/0021-merge-two-sorted-lists.java)
+- **Math (4):** [0007 Reverse Integer](./7-reverse-integer/reverse-integer.java) · [0009 Palindrome Number](./9-palindrome-number/palindrome-number.java) · [0013 Roman to Integer](./0013-roman-to-integer/0013-roman-to-integer.java) · [0258 Add Digits](./0258-add-digits/0258-add-digits.java)
+- **Number Theory (1):** [0258 Add Digits](./0258-add-digits/0258-add-digits.java)
+- **Recursion (1):** [0021 Merge Two Sorted Lists](./0021-merge-two-sorted-lists/0021-merge-two-sorted-lists.java)
+- **String (3):** [0008 String to Integer (atoi)](./0008-string-to-integer-atoi/0008-string-to-integer-atoi.java) · [0013 Roman to Integer](./0013-roman-to-integer/0013-roman-to-integer.java) · [0344 Reverse String](./0344-reverse-string/0344-reverse-string.java)
+- **Two Pointers (2):** [0026 Remove Duplicates from Sorted Array](./0026-remove-duplicates-from-sorted-array/0026-remove-duplicates-from-sorted-array.java) · [0344 Reverse String](./0344-reverse-string/0344-reverse-string.java)
 
 ## ▶️ How to Run a Solution
 
@@ -65,11 +74,4 @@ class TwoSumTest {
 ```
 
 </td></tr></table>
-
----
-
-If the workflow cannot push its generated README, enable **Read and write permissions** under **Settings → Actions → General → Workflow permissions**.
-
-With JDK 17+, regenerate locally using `javac -encoding UTF-8 tools/ReadmeGenerator.java` and `java -cp tools ReadmeGenerator`.
-
 <!-- README-GENERATED-END -->

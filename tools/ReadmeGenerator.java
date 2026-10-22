@@ -391,11 +391,6 @@ public final class ReadmeGenerator {
 
         appendTopics(readme, problems);
         appendRunGuide(readme);
-        readme.append("\n---\n\n");
-        readme.append("If the workflow cannot push its generated README, enable **Read and write permissions** ")
-                .append("under **Settings → Actions → General → Workflow permissions**.\n\n");
-        readme.append("With JDK 17+, regenerate locally using `javac -encoding UTF-8 tools/ReadmeGenerator.java` ")
-                .append("and `java -cp tools ReadmeGenerator`.\n\n");
         readme.append(END_MARKER).append('\n');
         return readme.toString();
     }
@@ -454,22 +449,20 @@ public final class ReadmeGenerator {
             return;
         }
 
-        readme.append("<table><tr>");
         for (Map.Entry<String, List<Problem>> entry : byTopic.entrySet()) {
-            Problem firstProblem = entry.getValue().get(0);
-            String topic = escapeHtml(entry.getKey());
-            readme.append("<td align=\"center\"><a href=\"./")
-                    .append(markdownPath(firstProblem.solution.getParent()))
-                    .append("/\">").append(topic).append("</a><br><sub>(")
-                    .append(entry.getValue().stream().map(problem -> problem.number).distinct().count())
-                    .append(")</sub></td>");
+            List<Problem> topicProblems = entry.getValue().stream()
+                    .distinct()
+                    .sorted(Comparator.comparingInt(problem -> problem.number))
+                    .toList();
+            readme.append("- **").append(entry.getKey()).append(" (")
+                    .append(topicProblems.size()).append("):** ");
+            readme.append(String.join(" · ", topicProblems.stream()
+                    .map(problem -> "[" + String.format(Locale.ROOT, "%04d", problem.number) + " "
+                            + escapeMarkdown(problem.title) + "](./" + markdownPath(problem.solution) + ")")
+                    .toList()));
+            readme.append('\n');
         }
-        readme.append("</tr></table>\n\n");
-    }
-
-    private static String escapeHtml(String value) {
-        return value.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-                .replace("\"", "&quot;");
+        readme.append('\n');
     }
 
     private static void appendRunGuide(StringBuilder readme) {
