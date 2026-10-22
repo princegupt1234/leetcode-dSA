@@ -26,7 +26,7 @@ Java solutions to LeetCode problems, automatically synced using LeetHub v2.
 | # | Problem | Difficulty | Topic | Java Solution |
 | ---: | --- | :---: | --- | :---: |
 | 0001 | [Two Sum](https://leetcode.com/problems/two-sum) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Array`, `Hash Table` | [View Code](./0001-two-sum/0001-two-sum.java) |
-| 0002 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers) | ![Medium](https://img.shields.io/badge/Medium-D97706?style=flat-square) | Not recorded | [View Code](./0002-add-two-numbers/0002-add-two-numbers.java) |
+| 0002 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers) | ![Medium](https://img.shields.io/badge/Medium-D97706?style=flat-square) | `Linked List`, `Math`, `Recursion` | [View Code](./0002-add-two-numbers/0002-add-two-numbers.java) |
 | 0004 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays) | ![Hard](https://img.shields.io/badge/Hard-DC2626?style=flat-square) | `Array`, `Binary Search`, `Divide and Conquer` | [View Code](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java) |
 | 0007 | [Reverse Integer](https://leetcode.com/problems/reverse-integer) | ![Medium](https://img.shields.io/badge/Medium-D97706?style=flat-square) | `Math` | [View Code](./7-reverse-integer/reverse-integer.java) |
 | 0008 | [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi) | ![Medium](https://img.shields.io/badge/Medium-D97706?style=flat-square) | `String` | [View Code](./0008-string-to-integer-atoi/0008-string-to-integer-atoi.java) |
@@ -36,7 +36,7 @@ Java solutions to LeetCode problems, automatically synced using LeetHub v2.
 | 0026 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Array`, `Two Pointers` | [View Code](./0026-remove-duplicates-from-sorted-array/0026-remove-duplicates-from-sorted-array.java) |
 | 0258 | [Add Digits](https://leetcode.com/problems/add-digits) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Math`, `Number Theory` | [View Code](./0258-add-digits/0258-add-digits.java) |
 | 0344 | [Reverse String](https://leetcode.com/problems/reverse-string) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `String`, `Two Pointers` | [View Code](./0344-reverse-string/0344-reverse-string.java) |
-| 2894 | [Divisible and Non-divisible Sums Difference](https://leetcode.com/problems/divisible-and-non-divisible-sums-difference) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | Not recorded | [View Code](./2894-divisible-and-non-divisible-sums-difference/2894-divisible-and-non-divisible-sums-difference.java) |
+| 2894 | [Divisible and Non-divisible Sums Difference](https://leetcode.com/problems/divisible-and-non-divisible-sums-difference) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Math` | [View Code](./2894-divisible-and-non-divisible-sums-difference/2894-divisible-and-non-divisible-sums-difference.java) |
 
 </details>
 
@@ -47,10 +47,10 @@ Java solutions to LeetCode problems, automatically synced using LeetHub v2.
 - **Binary Search (1):** [0004 Median of Two Sorted Arrays](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java)
 - **Divide and Conquer (1):** [0004 Median of Two Sorted Arrays](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java)
 - **Hash Table (2):** [0001 Two Sum](./0001-two-sum/0001-two-sum.java) · [0013 Roman to Integer](./0013-roman-to-integer/0013-roman-to-integer.java)
-- **Linked List (1):** [0021 Merge Two Sorted Lists](./0021-merge-two-sorted-lists/0021-merge-two-sorted-lists.java)
-- **Math (4):** [0007 Reverse Integer](./7-reverse-integer/reverse-integer.java) · [0009 Palindrome Number](./9-palindrome-number/palindrome-number.java) · [0013 Roman to Integer](./0013-roman-to-integer/0013-roman-to-integer.java) · [0258 Add Digits](./0258-add-digits/0258-add-digits.java)
+- **Linked List (2):** [0002 Add Two Numbers](./0002-add-two-numbers/0002-add-two-numbers.java) · [0021 Merge Two Sorted Lists](./0021-merge-two-sorted-lists/0021-merge-two-sorted-lists.java)
+- **Math (6):** [0002 Add Two Numbers](./0002-add-two-numbers/0002-add-two-numbers.java) · [0007 Reverse Integer](./7-reverse-integer/reverse-integer.java) · [0009 Palindrome Number](./9-palindrome-number/palindrome-number.java) · [0013 Roman to Integer](./0013-roman-to-integer/0013-roman-to-integer.java) · [0258 Add Digits](./0258-add-digits/0258-add-digits.java) · [2894 Divisible and Non-divisible Sums Difference](./2894-divisible-and-non-divisible-sums-difference/2894-divisible-and-non-divisible-sums-difference.java)
 - **Number Theory (1):** [0258 Add Digits](./0258-add-digits/0258-add-digits.java)
-- **Recursion (1):** [0021 Merge Two Sorted Lists](./0021-merge-two-sorted-lists/0021-merge-two-sorted-lists.java)
+- **Recursion (2):** [0002 Add Two Numbers](./0002-add-two-numbers/0002-add-two-numbers.java) · [0021 Merge Two Sorted Lists](./0021-merge-two-sorted-lists/0021-merge-two-sorted-lists.java)
 - **String (3):** [0008 String to Integer (atoi)](./0008-string-to-integer-atoi/0008-string-to-integer-atoi.java) · [0013 Roman to Integer](./0013-roman-to-integer/0013-roman-to-integer.java) · [0344 Reverse String](./0344-reverse-string/0344-reverse-string.java)
 - **Two Pointers (2):** [0026 Remove Duplicates from Sorted Array](./0026-remove-duplicates-from-sorted-array/0026-remove-duplicates-from-sorted-array.java) · [0344 Reverse String](./0344-reverse-string/0344-reverse-string.java)
 
@@ -86,20 +86,3 @@ class TwoSumTest {
 
 </details>
 <!-- README-GENERATED-END -->
-
-<!---LeetCode Topics Start-->
-# LeetCode Topics
-## Linked List
-|  |
-| ------- |
-| [0002-add-two-numbers](https://github.com/princegupt1234/leetcode-dSA/tree/master/0002-add-two-numbers) |
-## Math
-|  |
-| ------- |
-| [0002-add-two-numbers](https://github.com/princegupt1234/leetcode-dSA/tree/master/0002-add-two-numbers) |
-| [2894-divisible-and-non-divisible-sums-difference](https://github.com/princegupt1234/leetcode-dSA/tree/master/2894-divisible-and-non-divisible-sums-difference) |
-## Recursion
-|  |
-| ------- |
-| [0002-add-two-numbers](https://github.com/princegupt1234/leetcode-dSA/tree/master/0002-add-two-numbers) |
-<!---LeetCode Topics End-->

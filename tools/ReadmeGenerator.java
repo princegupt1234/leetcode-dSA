@@ -14,12 +14,17 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public final class ReadmeGenerator {
     private static final String START_MARKER = "<!-- README-GENERATED-START -->";
     private static final String END_MARKER = "<!-- README-GENERATED-END -->";
+    private static final String LEETCODE_TOPICS_START = "<!---LeetCode Topics Start-->";
+    private static final String LEETCODE_TOPICS_END = "<!---LeetCode Topics End-->";
     private static final Pattern PROBLEM_DIRECTORY = Pattern.compile("^(\\d+)[-_](.+)$");
     private static final Pattern HTML_TITLE = Pattern.compile(
             "(?is)<h2\\b[^>]*>.*?<a\\b[^>]*>(.*?)</a>.*?</h2>");
@@ -59,7 +64,13 @@ public final class ReadmeGenerator {
     public static void main(String[] args) {
         try {
             Path root = findRepositoryRoot(Path.of("").toAbsolutePath().normalize());
-            List<Problem> problems = discoverProblems(root);
+            Path readme = root.resolve("README.md");
+            String currentReadme = Files.exists(readme)
+                    ? Files.readString(readme, StandardCharsets.UTF_8)
+                    : "";
+            Map<Integer, List<String>> leetHubTopics = extractLeetHubTopics(currentReadme);
+            Map<Integer, List<String>> existingTopics = extractGeneratedTopics(currentReadme);
+            List<Problem> problems = discoverProblems(root, leetHubTopics, existingTopics);
             if (problems.isEmpty()) {
                 throw new IllegalStateException("No Java LeetCode solutions were found under " + root);
             }
@@ -80,7 +91,6 @@ public final class ReadmeGenerator {
                 recent = List.of();
             }
 
-            Path readme = root.resolve("README.md");
             String generated = generate(problems, recent);
             String output = mergeGeneratedSection(readme, generated);
             if (!Files.exists(readme) || !Files.readString(readme, StandardCharsets.UTF_8).equals(output)) {
@@ -105,7 +115,10 @@ public final class ReadmeGenerator {
         throw new IllegalStateException("Could not locate the repository root from " + start);
     }
 
-    private static List<Problem> discoverProblems(Path root) throws IOException {
+    private static List<Problem> discoverProblems(
+            Path root,
+            Map<Integer, List<String>> leetHubTopics,
+            Map<Integer, List<String>> existingTopics) throws IOException {
         Map<Path, List<Path>> solutionsByDirectory = new HashMap<>();
         Files.walkFileTree(root, new SimpleFileVisitor<>() {
             @Override
@@ -151,7 +164,9 @@ public final class ReadmeGenerator {
                 throw new IllegalStateException("Invalid Java solution path: " + relativeSolution);
             }
 
-            Problem problem = readProblemMetadata(directory, number, directoryMatcher.group(2), relativeSolution);
+            Problem problem = readProblemMetadata(
+                    directory, number, directoryMatcher.group(2), relativeSolution,
+                    leetHubTopics, existingTopics);
             Problem existing = problemsByNumber.putIfAbsent(number, problem);
             if (existing != null) {
                 throw new IllegalStateException("Multiple solution directories use problem number " + number);
@@ -202,7 +217,12 @@ public final class ReadmeGenerator {
     }
 
     private static Problem readProblemMetadata(
-            Path directory, int number, String directoryTitle, Path solution) throws IOException {
+            Path directory,
+            int number,
+            String directoryTitle,
+            Path solution,
+            Map<Integer, List<String>> leetHubTopics,
+            Map<Integer, List<String>> existingTopics) throws IOException {
         Path readme = directory.resolve("README.md");
         String metadata = Files.isRegularFile(readme)
                 ? Files.readString(readme, StandardCharsets.UTF_8)
@@ -217,9 +237,99 @@ public final class ReadmeGenerator {
         String leetCodeUrl = extractLeetCodeUrl(metadata);
         List<String> topics = extractTopics(metadata);
         if (topics.isEmpty()) {
-            topics = KNOWN_TOPICS.getOrDefault(number, List.of());
+            topics = leetHubTopics.getOrDefault(number,
+                    existingTopics.getOrDefault(number, KNOWN_TOPICS.getOrDefault(number, List.of())));
         }
         return new Problem(number, title, difficulty, leetCodeUrl, topics, solution);
+    }
+
+    private static Map<Integer, List<String>> extractLeetHubTopics(String readme) {
+        int start = readme.indexOf(LEETCODE_TOPICS_START);
+        int end = readme.indexOf(LEETCODE_TOPICS_END);
+        if (start < 0 && end < 0) {
+            return Map.of();
+        }
+        if (start < 0 || end < start
+                || readme.indexOf(LEETCODE_TOPICS_START, start + LEETCODE_TOPICS_START.length()) >= 0
+                || readme.indexOf(LEETCODE_TOPICS_END, end + LEETCODE_TOPICS_END.length()) >= 0) {
+            throw new IllegalStateException("README.md has malformed LeetHub topic markers.");
+        }
+
+        String section = readme.substring(start + LEETCODE_TOPICS_START.length(), end);
+        Map<Integer, Set<String>> topicsByProblem = new HashMap<>();
+        String topic = null;
+        StringBuilder topicContent = new StringBuilder();
+        for (String line : section.split("\\R")) {
+            Matcher heading = Pattern.compile("^##\\s+(.+?)\\s*$").matcher(line);
+            if (heading.matches()) {
+                if (topic != null) {
+                    addLeetHubTopicLinks(topic, topicContent.toString(), topicsByProblem);
+                }
+                topic = heading.group(1).trim();
+                topicContent.setLength(0);
+            } else if (topic != null) {
+                topicContent.append(line).append('\n');
+            }
+        }
+        if (topic != null) {
+            addLeetHubTopicLinks(topic, topicContent.toString(), topicsByProblem);
+        }
+
+        return topicsByProblem.entrySet().stream().collect(
+                Collectors.toUnmodifiableMap(
+                        Map.Entry::getKey, entry -> List.copyOf(entry.getValue())));
+    }
+
+    private static void addLeetHubTopicLinks(
+            String topic, String topicContent, Map<Integer, Set<String>> topicsByProblem) {
+        Matcher link = Pattern.compile(
+                    "\\]\\(https://github\\.com/[^/\\s)]+/[^/\\s)]+/tree/[^/\\s)]+/([^/\\s)]+)\\)")
+                    .matcher(topicContent);
+        while (link.find()) {
+            Matcher directory = PROBLEM_DIRECTORY.matcher(link.group(1));
+            if (directory.matches()) {
+                try {
+                    int number = Integer.parseInt(directory.group(1));
+                    topicsByProblem.computeIfAbsent(number, ignored -> new TreeSet<>(String.CASE_INSENSITIVE_ORDER))
+                            .add(topic);
+                } catch (NumberFormatException exception) {
+                    throw new IllegalStateException(
+                            "Invalid LeetHub problem directory: " + link.group(1), exception);
+                }
+            }
+        }
+    }
+
+    private static Map<Integer, List<String>> extractGeneratedTopics(String readme) {
+        int start = readme.indexOf(START_MARKER);
+        int end = readme.indexOf(END_MARKER);
+        if (start < 0 || end < start) {
+            return Map.of();
+        }
+
+        String generated = readme.substring(start + START_MARKER.length(), end);
+        Map<Integer, List<String>> topicsByProblem = new HashMap<>();
+        for (String line : generated.split("\\R")) {
+            String[] columns = line.split("\\|", -1);
+            if (columns.length != 7 || !columns[1].trim().matches("\\d+")) {
+                continue;
+            }
+            String topicCell = columns[4].trim();
+            if (topicCell.equalsIgnoreCase("Not recorded") || topicCell.isBlank()) {
+                continue;
+            }
+            List<String> topics = Pattern.compile("`([^`]+)`")
+                    .matcher(topicCell)
+                    .results()
+                    .map(match -> match.group(1).trim())
+                    .filter(topic -> !topic.isBlank())
+                    .distinct()
+                    .toList();
+            if (!topics.isEmpty()) {
+                topicsByProblem.put(Integer.parseInt(columns[1].trim()), topics);
+            }
+        }
+        return Map.copyOf(topicsByProblem);
     }
 
     private static String extractTitle(String metadata) {
@@ -499,7 +609,7 @@ public final class ReadmeGenerator {
         if (!Files.exists(readme)) {
             return generated;
         }
-        String current = Files.readString(readme, StandardCharsets.UTF_8);
+        String current = removeLeetHubTopicsSection(Files.readString(readme, StandardCharsets.UTF_8));
         int start = current.indexOf(START_MARKER);
         int end = current.indexOf(END_MARKER);
         if (start < 0 && end < 0) {
@@ -518,6 +628,23 @@ public final class ReadmeGenerator {
             suffix = suffix.substring(1);
         }
         return prefix + generated + suffix;
+    }
+
+    private static String removeLeetHubTopicsSection(String readme) {
+        int start = readme.indexOf(LEETCODE_TOPICS_START);
+        int end = readme.indexOf(LEETCODE_TOPICS_END);
+        if (start < 0 && end < 0) {
+            return readme;
+        }
+        if (start < 0 || end < start
+                || readme.indexOf(LEETCODE_TOPICS_START, start + LEETCODE_TOPICS_START.length()) >= 0
+                || readme.indexOf(LEETCODE_TOPICS_END, end + LEETCODE_TOPICS_END.length()) >= 0) {
+            throw new IllegalStateException("README.md has malformed LeetHub topic markers.");
+        }
+
+        String before = readme.substring(0, start).stripTrailing();
+        String after = readme.substring(end + LEETCODE_TOPICS_END.length()).stripLeading();
+        return after.isEmpty() ? before + "\n" : before + "\n\n" + after;
     }
 
     private record Problem(
