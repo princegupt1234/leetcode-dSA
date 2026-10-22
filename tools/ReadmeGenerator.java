@@ -41,6 +41,17 @@ public final class ReadmeGenerator {
             "Easy", "16A34A",
             "Medium", "D97706",
             "Hard", "DC2626");
+    private static final Map<Integer, List<String>> KNOWN_TOPICS = Map.ofEntries(
+            Map.entry(1, List.of("Array", "Hash Table")),
+            Map.entry(4, List.of("Array", "Binary Search", "Divide and Conquer")),
+            Map.entry(7, List.of("Math")),
+            Map.entry(8, List.of("String")),
+            Map.entry(9, List.of("Math")),
+            Map.entry(13, List.of("Hash Table", "Math", "String")),
+            Map.entry(21, List.of("Linked List", "Recursion")),
+            Map.entry(26, List.of("Array", "Two Pointers")),
+            Map.entry(258, List.of("Math", "Number Theory")),
+            Map.entry(344, List.of("String", "Two Pointers")));
 
     private ReadmeGenerator() {
     }
@@ -204,6 +215,9 @@ public final class ReadmeGenerator {
         String difficulty = extractDifficulty(metadata);
         String leetCodeUrl = extractLeetCodeUrl(metadata);
         List<String> topics = extractTopics(metadata);
+        if (topics.isEmpty()) {
+            topics = KNOWN_TOPICS.getOrDefault(number, List.of());
+        }
         return new Problem(number, title, difficulty, leetCodeUrl, topics, solution);
     }
 

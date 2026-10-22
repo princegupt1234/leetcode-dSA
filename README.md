@@ -24,20 +24,20 @@ Java solutions to LeetCode problems, automatically synced using LeetHub v2.
 
 | # | Problem | Difficulty | Topic | Java Solution |
 | ---: | --- | :---: | --- | :---: |
-| 0001 | [Two Sum](https://leetcode.com/problems/two-sum) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | Not recorded | [View Code](./0001-two-sum/0001-two-sum.java) |
-| 0004 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays) | ![Hard](https://img.shields.io/badge/Hard-DC2626?style=flat-square) | Not recorded | [View Code](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java) |
-| 0007 | [Reverse Integer](https://leetcode.com/problems/reverse-integer) | ![Medium](https://img.shields.io/badge/Medium-D97706?style=flat-square) | Not recorded | [View Code](./7-reverse-integer/reverse-integer.java) |
-| 0008 | [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi) | ![Medium](https://img.shields.io/badge/Medium-D97706?style=flat-square) | Not recorded | [View Code](./0008-string-to-integer-atoi/0008-string-to-integer-atoi.java) |
-| 0009 | [Palindrome Number](https://leetcode.com/problems/palindrome-number) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | Not recorded | [View Code](./9-palindrome-number/palindrome-number.java) |
-| 0013 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | Not recorded | [View Code](./0013-roman-to-integer/0013-roman-to-integer.java) |
-| 0021 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | Not recorded | [View Code](./0021-merge-two-sorted-lists/0021-merge-two-sorted-lists.java) |
-| 0026 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | Not recorded | [View Code](./0026-remove-duplicates-from-sorted-array/0026-remove-duplicates-from-sorted-array.java) |
-| 0258 | [Add Digits](https://leetcode.com/problems/add-digits) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | Not recorded | [View Code](./0258-add-digits/0258-add-digits.java) |
-| 0344 | [Reverse String](https://leetcode.com/problems/reverse-string) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | Not recorded | [View Code](./0344-reverse-string/0344-reverse-string.java) |
+| 0001 | [Two Sum](https://leetcode.com/problems/two-sum) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Array`, `Hash Table` | [View Code](./0001-two-sum/0001-two-sum.java) |
+| 0004 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays) | ![Hard](https://img.shields.io/badge/Hard-DC2626?style=flat-square) | `Array`, `Binary Search`, `Divide and Conquer` | [View Code](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java) |
+| 0007 | [Reverse Integer](https://leetcode.com/problems/reverse-integer) | ![Medium](https://img.shields.io/badge/Medium-D97706?style=flat-square) | `Math` | [View Code](./7-reverse-integer/reverse-integer.java) |
+| 0008 | [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi) | ![Medium](https://img.shields.io/badge/Medium-D97706?style=flat-square) | `String` | [View Code](./0008-string-to-integer-atoi/0008-string-to-integer-atoi.java) |
+| 0009 | [Palindrome Number](https://leetcode.com/problems/palindrome-number) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Math` | [View Code](./9-palindrome-number/palindrome-number.java) |
+| 0013 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Hash Table`, `Math`, `String` | [View Code](./0013-roman-to-integer/0013-roman-to-integer.java) |
+| 0021 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Linked List`, `Recursion` | [View Code](./0021-merge-two-sorted-lists/0021-merge-two-sorted-lists.java) |
+| 0026 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Array`, `Two Pointers` | [View Code](./0026-remove-duplicates-from-sorted-array/0026-remove-duplicates-from-sorted-array.java) |
+| 0258 | [Add Digits](https://leetcode.com/problems/add-digits) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Math`, `Number Theory` | [View Code](./0258-add-digits/0258-add-digits.java) |
+| 0344 | [Reverse String](https://leetcode.com/problems/reverse-string) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `String`, `Two Pointers` | [View Code](./0344-reverse-string/0344-reverse-string.java) |
 
 ## 📂 Topic-wise Navigation
 
-Topic metadata is not recorded for these solutions yet.
+<table><tr><td align="center"><a href="./0001-two-sum/">Array</a><br><sub>(3)</sub></td><td align="center"><a href="./0004-median-of-two-sorted-arrays/">Binary Search</a><br><sub>(1)</sub></td><td align="center"><a href="./0004-median-of-two-sorted-arrays/">Divide and Conquer</a><br><sub>(1)</sub></td><td align="center"><a href="./0001-two-sum/">Hash Table</a><br><sub>(2)</sub></td><td align="center"><a href="./0021-merge-two-sorted-lists/">Linked List</a><br><sub>(1)</sub></td><td align="center"><a href="./7-reverse-integer/">Math</a><br><sub>(4)</sub></td><td align="center"><a href="./0258-add-digits/">Number Theory</a><br><sub>(1)</sub></td><td align="center"><a href="./0021-merge-two-sorted-lists/">Recursion</a><br><sub>(1)</sub></td><td align="center"><a href="./0008-string-to-integer-atoi/">String</a><br><sub>(3)</sub></td><td align="center"><a href="./0026-remove-duplicates-from-sorted-array/">Two Pointers</a><br><sub>(2)</sub></td></tr></table>
 
 ## ▶️ How to Run a Solution
 
