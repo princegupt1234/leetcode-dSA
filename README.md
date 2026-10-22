@@ -68,8 +68,8 @@ class TwoSumTest {
 
 ---
 
-If the workflow cannot push its generated README, enable **Read and write permissions** under **Settings → Actions → General → Workflow permissions**.
+---
 
-With JDK 17+, regenerate locally using `javac -encoding UTF-8 tools/ReadmeGenerator.java` and `java -cp tools ReadmeGenerator`.
+⭐ **Keep Learning. Keep Solving. Keep Growing.**
 
 <!-- README-GENERATED-END -->
