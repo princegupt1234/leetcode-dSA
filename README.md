@@ -68,6 +68,6 @@ class TwoSumTest {
 
 ---
 
-⭐ **Keep Learning. Keep Solving. Keep Growing.**
+⭐ **Code. Learn. Improve. Repeat.**
 
 <!-- README-GENERATED-END -->
