@@ -383,8 +383,8 @@ public final class ReadmeGenerator {
         }
 
         readme.append("<details>\n")
-                .append("<summary>📚 All Problems and Solutions (")
-                .append(problems.size()).append(")</summary>\n\n");
+                .append("<summary><h2>📚 All Problems and Solutions (")
+                .append(problems.size()).append(")</h2></summary>\n\n");
         readme.append("| # | Problem | Difficulty | Topic | Java Solution |\n")
                 .append("| ---: | --- | :---: | --- | :---: |\n");
         for (Problem problem : problems) {
@@ -447,8 +447,8 @@ public final class ReadmeGenerator {
                         .add(entry.getValue()));
 
         readme.append("<details>\n")
-                .append("<summary>📂 Browse by Topic (")
-                .append(byTopic.size()).append(" topics)</summary>\n\n");
+                .append("<summary><h2>📂 Browse by Topic (")
+                .append(byTopic.size()).append(" topics)</h2></summary>\n\n");
         if (byTopic.isEmpty()) {
             readme.append("Topic metadata is not recorded for these solutions yet.\n\n");
             readme.append("</details>\n\n");
@@ -473,7 +473,7 @@ public final class ReadmeGenerator {
 
     private static void appendRunGuide(StringBuilder readme) {
         readme.append("<details>\n")
-                .append("<summary>▶️ How to Run a Solution</summary>\n\n");
+                .append("<summary><h2>▶️ How to Run a Solution</h2></summary>\n\n");
         readme.append("<table><tr><td valign=\"top\">\n\n");
         readme.append("1. Navigate to a problem folder in this repository.\n")
                 .append("2. Open its Java solution file.\n")
