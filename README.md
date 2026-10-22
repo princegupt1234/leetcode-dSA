@@ -25,7 +25,7 @@ Java solutions synced from LeetCode using LeetHub v2.
       <table>
         <thead><tr><th>#</th><th>Problem</th><th>Difficulty</th><th>Topics</th><th>Added</th></tr></thead>
         <tbody>
-          <tr><td>0344</td><td><a href="./0344-reverse-string/0344-reverse-string.java">Reverse String</a></td><td><img alt="Easy" src="https://img.shields.io/badge/Easy-16A34A?style=flat-square"></td><td>String, Two Pointers</td><td>today</td></tr>
+          <tr><td>0344</td><td><a href="./0344-reverse-string/0344-reverse-string.java">Reverse String</a></td><td><img alt="Easy" src="https://img.shields.io/badge/Easy-16A34A?style=flat-square"></td><td>String, Two Pointers</td><td>2 days ago</td></tr>
           <tr><td>0004</td><td><a href="./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java">Median of Two Sorted Arrays</a></td><td><img alt="Hard" src="https://img.shields.io/badge/Hard-DC2626?style=flat-square"></td><td>Not recorded</td><td>1 week ago</td></tr>
           <tr><td>0008</td><td><a href="./0008-string-to-integer-atoi/0008-string-to-integer-atoi.java">String to Integer (atoi)</a></td><td><img alt="Medium" src="https://img.shields.io/badge/Medium-D97706?style=flat-square"></td><td>Not recorded</td><td>3 weeks ago</td></tr>
         </tbody>
@@ -44,13 +44,4 @@ java -cp out YourTestHarness</code></pre>
 Documentation is regenerated after each LeetHub push; locally run `javac UpdateReadme.java` and `java UpdateReadme`.
 
 <!---LeetCode Topics Start-->
-# LeetCode Topics
-## Two Pointers
-|  |
-| ------- |
-| [0344-reverse-string](https://github.com/princegupt1234/leetcode-dSA/tree/master/0344-reverse-string) |
-## String
-|  |
-| ------- |
-| [0344-reverse-string](https://github.com/princegupt1234/leetcode-dSA/tree/master/0344-reverse-string) |
 <!---LeetCode Topics End-->
