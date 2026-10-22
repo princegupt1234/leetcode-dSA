@@ -96,6 +96,7 @@ class TwoSumTest {
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/princegupt1234/leetcode-dSA/tree/master/0002-add-two-numbers) |
+| [2894-divisible-and-non-divisible-sums-difference](https://github.com/princegupt1234/leetcode-dSA/tree/master/2894-divisible-and-non-divisible-sums-difference) |
 ## Recursion
 |  |
 | ------- |
