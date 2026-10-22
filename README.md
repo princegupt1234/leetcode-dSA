@@ -86,3 +86,19 @@ class TwoSumTest {
 
 </details>
 <!-- README-GENERATED-END -->
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## String
+|  |
+| ------- |
+| [0020-valid-parentheses](https://github.com/princegupt1234/leetcode-dSA/tree/master/0020-valid-parentheses) |
+## Stack
+|  |
+| ------- |
+| [0020-valid-parentheses](https://github.com/princegupt1234/leetcode-dSA/tree/master/0020-valid-parentheses) |
+## Bracket Sequences
+|  |
+| ------- |
+| [0020-valid-parentheses](https://github.com/princegupt1234/leetcode-dSA/tree/master/0020-valid-parentheses) |
+<!---LeetCode Topics End-->
