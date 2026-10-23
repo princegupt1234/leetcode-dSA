@@ -8,20 +8,20 @@ Java solutions to LeetCode problems, automatically synced using LeetHub v2.
 
 ## 📊 Progress Summary
 
-<table><tr><td align="center"><img alt="Total Solved: 13" src="https://img.shields.io/badge/Total_Solved-13-2563EB?style=for-the-badge"></td><td align="center"><img alt="Easy: 9" src="https://img.shields.io/badge/Easy-9-16A34A?style=for-the-badge"></td><td align="center"><img alt="Medium: 3" src="https://img.shields.io/badge/Medium-3-D97706?style=for-the-badge"></td><td align="center"><img alt="Hard: 1" src="https://img.shields.io/badge/Hard-1-DC2626?style=for-the-badge"></td></tr></table>
+<table><tr><td align="center"><img alt="Total Solved: 14" src="https://img.shields.io/badge/Total_Solved-14-2563EB?style=for-the-badge"></td><td align="center"><img alt="Easy: 10" src="https://img.shields.io/badge/Easy-10-16A34A?style=for-the-badge"></td><td align="center"><img alt="Medium: 3" src="https://img.shields.io/badge/Medium-3-D97706?style=for-the-badge"></td><td align="center"><img alt="Hard: 1" src="https://img.shields.io/badge/Hard-1-DC2626?style=for-the-badge"></td></tr></table>
 
 ## 🕒 Recently Added Solutions
 
 | # | Problem | Difficulty | Solution |
 | ---: | --- | :---: | :---: |
+| 0485 | [Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | [View Code](./0485-max-consecutive-ones/0485-max-consecutive-ones.java) |
 | 0020 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | [View Code](./0020-valid-parentheses/0020-valid-parentheses.java) |
 | 2894 | [Divisible and Non-divisible Sums Difference](https://leetcode.com/problems/divisible-and-non-divisible-sums-difference) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | [View Code](./2894-divisible-and-non-divisible-sums-difference/2894-divisible-and-non-divisible-sums-difference.java) |
 | 0002 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers) | ![Medium](https://img.shields.io/badge/Medium-D97706?style=flat-square) | [View Code](./0002-add-two-numbers/0002-add-two-numbers.java) |
 | 0344 | [Reverse String](https://leetcode.com/problems/reverse-string) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | [View Code](./0344-reverse-string/0344-reverse-string.java) |
-| 0004 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays) | ![Hard](https://img.shields.io/badge/Hard-DC2626?style=flat-square) | [View Code](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java) |
 
 <details>
-<summary><h2>📚 All Problems and Solutions (13)</h2></summary>
+<summary><h2>📚 All Problems and Solutions (14)</h2></summary>
 
 | # | Problem | Difficulty | Topic | Java Solution |
 | ---: | --- | :---: | --- | :---: |
@@ -37,6 +37,7 @@ Java solutions to LeetCode problems, automatically synced using LeetHub v2.
 | 0026 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Array`, `Two Pointers` | [View Code](./0026-remove-duplicates-from-sorted-array/0026-remove-duplicates-from-sorted-array.java) |
 | 0258 | [Add Digits](https://leetcode.com/problems/add-digits) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Math`, `Number Theory` | [View Code](./0258-add-digits/0258-add-digits.java) |
 | 0344 | [Reverse String](https://leetcode.com/problems/reverse-string) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `String`, `Two Pointers` | [View Code](./0344-reverse-string/0344-reverse-string.java) |
+| 0485 | [Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Array` | [View Code](./0485-max-consecutive-ones/0485-max-consecutive-ones.java) |
 | 2894 | [Divisible and Non-divisible Sums Difference](https://leetcode.com/problems/divisible-and-non-divisible-sums-difference) | ![Easy](https://img.shields.io/badge/Easy-16A34A?style=flat-square) | `Math` | [View Code](./2894-divisible-and-non-divisible-sums-difference/2894-divisible-and-non-divisible-sums-difference.java) |
 
 </details>
@@ -44,7 +45,7 @@ Java solutions to LeetCode problems, automatically synced using LeetHub v2.
 <details>
 <summary><h2>📂 Browse by Topic (12 topics)</h2></summary>
 
-- **Array (3):** [0001 Two Sum](./0001-two-sum/0001-two-sum.java) · [0004 Median of Two Sorted Arrays](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java) · [0026 Remove Duplicates from Sorted Array](./0026-remove-duplicates-from-sorted-array/0026-remove-duplicates-from-sorted-array.java)
+- **Array (4):** [0001 Two Sum](./0001-two-sum/0001-two-sum.java) · [0004 Median of Two Sorted Arrays](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java) · [0026 Remove Duplicates from Sorted Array](./0026-remove-duplicates-from-sorted-array/0026-remove-duplicates-from-sorted-array.java) · [0485 Max Consecutive Ones](./0485-max-consecutive-ones/0485-max-consecutive-ones.java)
 - **Binary Search (1):** [0004 Median of Two Sorted Arrays](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java)
 - **Bracket Sequences (1):** [0020 Valid Parentheses](./0020-valid-parentheses/0020-valid-parentheses.java)
 - **Divide and Conquer (1):** [0004 Median of Two Sorted Arrays](./0004-median-of-two-sorted-arrays/0004-median-of-two-sorted-arrays.java)
@@ -89,11 +90,3 @@ class TwoSumTest {
 
 </details>
 <!-- README-GENERATED-END -->
-
-<!---LeetCode Topics Start-->
-# LeetCode Topics
-## Array
-|  |
-| ------- |
-| [0485-max-consecutive-ones](https://github.com/princegupt1234/leetcode-dSA/tree/master/0485-max-consecutive-ones) |
-<!---LeetCode Topics End-->
