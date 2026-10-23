@@ -89,3 +89,11 @@ class TwoSumTest {
 
 </details>
 <!-- README-GENERATED-END -->
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+|  |
+| ------- |
+| [0485-max-consecutive-ones](https://github.com/princegupt1234/leetcode-dSA/tree/master/0485-max-consecutive-ones) |
+<!---LeetCode Topics End-->
