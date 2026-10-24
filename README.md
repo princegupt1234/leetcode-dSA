@@ -90,3 +90,27 @@ class TwoSumTest {
 
 </details>
 <!-- README-GENERATED-END -->
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+|  |
+| ------- |
+| [0075-sort-colors](https://github.com/princegupt1234/leetcode-dSA/tree/master/0075-sort-colors) |
+## Two Pointers
+|  |
+| ------- |
+| [0075-sort-colors](https://github.com/princegupt1234/leetcode-dSA/tree/master/0075-sort-colors) |
+## Sorting
+|  |
+| ------- |
+| [0075-sort-colors](https://github.com/princegupt1234/leetcode-dSA/tree/master/0075-sort-colors) |
+## Quicksort
+|  |
+| ------- |
+| [0075-sort-colors](https://github.com/princegupt1234/leetcode-dSA/tree/master/0075-sort-colors) |
+## Bubble Sort
+|  |
+| ------- |
+| [0075-sort-colors](https://github.com/princegupt1234/leetcode-dSA/tree/master/0075-sort-colors) |
+<!---LeetCode Topics End-->
